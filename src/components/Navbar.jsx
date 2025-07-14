@@ -38,7 +38,7 @@ export const Navbar = () => {
 
   return <nav className={cn(
     "fixed w-full z-40 transition-all duration-300",
-     isScrolled ? "py-3 bg-background/80 backdrop-blur-md shadow-xs" : "py-5"
+     isScrolled ? "py-5 bg-background/80 backdrop-blur-md shadow-xs" : "py-5"
   )
 
   }>
@@ -55,7 +55,7 @@ export const Navbar = () => {
 
       {/*Desktop version*/}
 
-      <div className="hidden md:flex space-x-8">
+      <div className="hidden md:flex space-x-10">
         {navItems.map((item, key) => (
           <a key = {key} href={item.href} className="text-foreground/80 hover:text-primary transition-colors duration-300">
             {item.name}
