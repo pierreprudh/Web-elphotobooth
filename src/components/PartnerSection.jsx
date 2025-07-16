@@ -21,10 +21,10 @@ export const PartnerSection = () => {
   }, []);
 
   return (
-
-
-
     <>
+    <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+        Ils nous font confiance
+      </h2>
       <style>
         {`
           @keyframes scroll {

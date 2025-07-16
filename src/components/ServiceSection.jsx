@@ -7,30 +7,33 @@ import { useState } from "react";
 const formules = [
   {
     id: 1,
-    title: "Formule 1",
-    description: "Formule simple pour les évènements avec blablal",
-    time: "5h",
-    img_number: "500",
+    title: "Formule Starter",
+    description: "Formule simple pour les évènements avec blablal, les photos numériques sont comprises en illimité.",
+    time: "3h",
+    img_number: "200",
     icon: <FaCameraRetro size={40} className="mx-auto mb-4" />,
+    price: "390"
     // image: "/projects/Project - Mask Detection.png",
     // demoUrl:"#..."
   },
   {
     id: 2,
-    title: "Formule 2",
+    title: "Formule Medium",
     description: "Big data pipeline analyzing mobile network coverage in France using Hadoop, Kafka, Spark, and Opensearch. Includes visualization and processing of large-scale geospatial data from ANFR.",
-    time: "5h",
-    img_number: "500",
+    time: "4h",
+    img_number: "400",
     icon: <FaPhotoVideo size={40} className="mx-auto mb-4" />,
+    price: "490"
     // image: "/projects/Project - French Mobile.png",
   },
   {
     id: 3,
-    title: "Formule 3",
+    title: "Formule Premium",
     description: "A computer vision system built with TensorFlow/Keras to detect and classify animal faces. Demonstrates convolutional neural networks applied to wildlife image recognition.",
     time: "5h",
-    img_number: "500",
+    img_number: "600",
     icon: <FaRegSmileBeam size={40} className="mx-auto mb-4" />,
+    price: "690"
     // image: "/projects/Project - Animal face recognition.png",
   },
 ];
@@ -90,19 +93,23 @@ export const ServiceSection = () => {
                     <CiImageOn className="text-primary" size={20} />
                     <span>{formule.img_number}photos</span>
                   </div>
+                  <div className="flex justify-center items-center gap-2 text-xl font-semibold text-primary mt-1 mb-6">
+                    <span className="text-black font-normal text-sm">À partir de</span>
+                    <span>{formule.price}€</span>
+                  </div>
                 </div>
               ))}
 
               <button
                 onClick={handlePrev}
-                className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-primary text-white p-2 rounded-full shadow-lg hover:scale-110 hover:bg-primary/90 transition-transform duration-200"
+                className="absolute -left-4 md:left-0 top-1/2 -translate-y-1/2 z-20 bg-primary text-white p-2 rounded-full shadow-lg hover:scale-110 hover:bg-primary/90 transition-transform duration-200"
               >
                 <FaChevronLeft size={20} />
               </button>
 
               <button
                 onClick={handleNext}
-                className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-primary text-white p-2 rounded-full shadow-lg hover:scale-110 hover:bg-primary/90 transition-transform duration-200"
+                className="absolute -right-4 md:right-0 top-1/2 -translate-y-1/2 z-20 bg-primary text-white p-2 rounded-full shadow-lg hover:scale-110 hover:bg-primary/90 transition-transform duration-200"
               >
                 <FaChevronRight size={20} />
               </button>
@@ -125,7 +132,11 @@ export const ServiceSection = () => {
               </div>
               <div className="flex justify-center items-center gap-2 text-sm text-gray-600 mt-1 mb-6">
                 <CiImageOn className="text-primary" size={20}/>
-                <span>{formule.img_number}photos</span>
+                <span>{formule.img_number} photos</span>
+              </div>
+              <div className="flex justify-center items-center gap-2 text-xl font-semibold text-primary mt-1 mb-6">
+                <span className="text-black font-normal text-sm">À partir de</span>
+                <span>{formule.price}€</span>
               </div>
             </div>
           ))}
