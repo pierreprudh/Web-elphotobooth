@@ -15,7 +15,7 @@ export const ContactSection = () => {
         Si vous avez besoin de plus d'informations n'hésitez pas à nous contactez !
       </p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 items-start">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 items-start">
         <div className="p-6 bg-card border border-border rounded-xl shadow-sm flex flex-col items-center text-center space-y-4 transition-transform duration-300 hover:scale-105">
           <div className="p-3 rounded-full bg-primary/10">
             <Mail className="h-6 w-6 text-primary" />
@@ -37,16 +37,6 @@ export const ContactSection = () => {
             <a href="tel:" className="text-muted-foreground hover:text-primary transition-colors">
               07 78 82 03 20
             </a>
-          </div>
-        </div>
-
-        <div className="p-6 bg-card border border-border rounded-xl shadow-sm flex flex-col items-center text-center space-y-4 transition-transform duration-300 hover:scale-105">
-          <div className="p-3 rounded-full bg-primary/10">
-            <MapPin className="h-6 w-6 text-primary" />
-          </div>
-          <div>
-            <h4 className="font-medium">Location</h4>
-            <span className="text-muted-foreground">Sceaux, France</span>
           </div>
         </div>
 

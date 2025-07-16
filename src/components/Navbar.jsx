@@ -12,9 +12,9 @@ const navItems = [
   {
     name: "Services", href: "#services"
   },
-  {
-    name: "Photo", href: "#photo"
-  },
+  //{
+    //name: "Photo", href: "#photo"
+  //},
   {
     name: "Contact", href: "#contact"
   },
