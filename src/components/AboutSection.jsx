@@ -40,7 +40,7 @@ export const AboutSection = () => {
             </div>
           </div>
 
-          <div ref={ref} className="flex flex-col sm:grid sm:grid-cols-2 md:grid-cols-3 gap-4 text-center text-sm sm:text-base sm:direction-rtl sm:text-left">
+          <div ref={ref} className="flex flex-col sm:grid sm:grid-cols-1 md:grid-cols-3 gap-4 text-center text-sm sm:text-base sm:direction-rtl sm:text-left">
             <div className="gradient-border p-6 card-hover">
               <h4 className="text-xl sm:text-2xl md:text-3xl font-bold text-primary">
                 <CountUp start={inView ? 0 : null} end={150} duration={6} />+
