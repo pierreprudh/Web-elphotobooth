@@ -15,15 +15,15 @@ export const ContactSection = () => {
         Si vous avez besoin de plus d'informations n'hésitez pas à nous contactez !
       </p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 items-start">
+      <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-10 items-start">
         <div className="p-6 bg-card border border-border rounded-xl shadow-sm flex flex-col items-center text-center space-y-4 transition-transform duration-300 hover:scale-105">
           <div className="p-3 rounded-full bg-primary/10">
             <Mail className="h-6 w-6 text-primary" />
           </div>
           <div>
             <h4 className="font-medium">Email</h4>
-            <a href="mailto:ElPhotobooth@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
-              ElPhotobooth@gmail.com
+            <a href="mailto:elphotoboothmemories@hotmail.com" className="text-muted-foreground hover:text-primary transition-colors">
+              elphotoboothmemories@hotmail.com
             </a>
           </div>
         </div>
@@ -34,8 +34,8 @@ export const ContactSection = () => {
           </div>
           <div>
             <h4 className="font-medium">Téléphone</h4>
-            <a href="tel:" className="text-muted-foreground hover:text-primary transition-colors">
-              07 78 82 03 20
+            <a href="tel:07 60 41 22 15" className="text-muted-foreground hover:text-primary transition-colors">
+              07 60 41 22 15
             </a>
           </div>
         </div>
