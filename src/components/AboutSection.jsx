@@ -1,4 +1,5 @@
 import { Briefcase, Code, User, Sparkles, Pin, MapPin  } from "lucide-react"
+import ClickSpark from "./Spark"
 
 export const AboutSection = () => {
   return <section id="about" className="py-24 px-4 relative">
@@ -10,18 +11,20 @@ export const AboutSection = () => {
 
       <div className="grid gr-cols-1 md:grid-cols-2 gap-12 items-center">
         <div className="flex justify-center">
-          <img src="/model.png" alt="Modèle photobooth" className="max-w-full h-auto " />
+          <ClickSpark>
+            <img src="/model.png" alt="Modèle photobooth" className="max-w-full h-auto block cursor-pointer" />
+          </ClickSpark>
         </div>
 
         <div className="space-y-6">
           <div className="gradient-border p-6 card-hover">
             <div className="flex items-start gap-4">
               <div className="p-3 rounded-full bg-primary/10">
-                <Code  className="h-6 w-6 text-primary"/>
+                <Sparkles  className="h-6 w-6 text-primary"/>
               </div>
               <div className="text-left">
                 <h4 className="font-semibold text-lg">
-                  Data Scientist/Analyst
+                  Elphotobooth
                 </h4>
                 <p className="text-muted-foreground">
                   Construisez des souvenirs inoubliables
