@@ -21,6 +21,9 @@ export const PartnerSection = () => {
   }, []);
 
   return (
+
+
+
     <>
       <style>
         {`

@@ -1,4 +1,4 @@
-import { Briefcase, Code, User, Sparkles  } from "lucide-react"
+import { Briefcase, Code, User, Sparkles, Pin, MapPin  } from "lucide-react"
 
 export const AboutSection = () => {
   return <section id="about" className="py-24 px-4 relative">
@@ -9,25 +9,11 @@ export const AboutSection = () => {
       </h2>
 
       <div className="grid gr-cols-1 md:grid-cols-2 gap-12 items-center">
-        <div className="space-y-6 ">
-          <h3 className="text-2xl font-semibold">Entreprise de location de Matériel Photo</h3>
-          <p className="text-muted-foreground">
-            Currently studying at ENSIIE, I’m passionate about data science, AI, and large-scale data analytics. I’ve gained hands-on experience through internships and personal projects involving predictive modeling, data visualization, and infrastructure tools.
-          </p>
-          <p className="text-muted-foreground">
-            I enjoy turning complex problems into actionable insights, and love building tools that blend machine learning with clean, user-friendly interfaces.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
-            <a href="#contact" className="cosmic-button" >
-              {" "}
-              Contacter nous !
-            </a>
-
-          </div>
+        <div className="flex justify-center">
+          <img src="/model.png" alt="Modèle photobooth" className="max-w-full h-auto " />
         </div>
 
-        <div className="grid grid-cols-1 gap-6">
+        <div className="space-y-6">
           <div className="gradient-border p-6 card-hover">
             <div className="flex items-start gap-4">
               <div className="p-3 rounded-full bg-primary/10">
@@ -44,40 +30,41 @@ export const AboutSection = () => {
             </div>
           </div>
 
+          <div className="grid grid-cols-3 gap-4 text-center text-sm sm:text-base">
+            <div className="gradient-border p-6 card-hover">
+              <h4 className="text-4xl font-bold text-primary">150+</h4>
+              <p className="text-muted-foreground mt-2">Événements couverts</p>
+            </div>
+            <div className="gradient-border p-6 card-hover">
+              <h4 className="text-4xl font-bold text-primary">98%</h4>
+              <p className="text-muted-foreground mt-2">Clients satisfaits</p>
+            </div>
+            <div className="gradient-border p-6 card-hover">
+              <h4 className="text-4xl font-bold text-primary">24h</h4>
+              <p className="text-muted-foreground mt-2">Temps de réponse moyen</p>
+            </div>
+          </div>
+
           <div className="gradient-border p-6 card-hover">
             <div className="flex items-start gap-4">
               <div className="p-3 rounded-full bg-primary/10">
-                <Sparkles  className="h-6 w-6 text-primary"/>
+                <MapPin  className="h-6 w-6 text-primary"/>
               </div>
               <div className="text-left">
                 <h4 className="font-semibold text-lg">
                   Location
                 </h4>
                 <p className="text-muted-foreground">
-                  Nous sommes basés en banlieue parisienne.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="gradient-border p-6 card-hover">
-            <div className="flex items-start gap-4">
-              <div className="p-3 rounded-full bg-primary/10">
-                <Briefcase  className="h-6 w-6 text-primary"/>
-              </div>
-              <div className="text-left">
-                <h4 className="font-semibold text-lg">
-                  Rapide
-                </h4>
-                <p className="text-muted-foreground">
-                  Réponse rapide sous 1/2 jours
+                  Sceaux, Hauts-de-Seine
                 </p>
               </div>
             </div>
           </div>
 
         </div>
+
       </div>
+
     </div>
   </section>
 }

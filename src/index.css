@@ -204,3 +204,11 @@
     transform: translateX(-50%);
   }
 }
+
+@keyframes wave {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-10%); }
+          }
+          .animate-wave {
+            animation: wave 5s ease-in-out infinite alternate;
+          }
