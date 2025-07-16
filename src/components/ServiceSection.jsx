@@ -33,7 +33,7 @@ const formules = [
     time: "5h",
     img_number: "600",
     icon: <FaRegSmileBeam size={40} className="mx-auto mb-4" />,
-    price: "690"
+    price: "590"
     // image: "/projects/Project - Animal face recognition.png",
   },
 ];
