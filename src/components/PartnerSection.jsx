@@ -4,30 +4,25 @@ const logos = [
   "blr.svg",
   "fcblr.png",
   "sceaux.svg",
+  "generali.svg",
+  "howden.svg",
+  "ms amlin.png",
+  "orpea.png",
 ];
 
 export const PartnerSection = () => {
   const slideTrackRef = useRef(null);
 
-  useEffect(() => {
-    const slideTrack = slideTrackRef.current;
-    if (!slideTrack) return;
-
-    const logos = Array.from(slideTrack.children);
-    logos.forEach((logo) => {
-      const clone = logo.cloneNode(true);
-      slideTrack.appendChild(clone);
-    });
-  }, []);
+  // The slideTrackRef is kept in case you want to use it for other purposes.
 
   return (
     <>
-    <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+      <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
         Ils nous font confiance
       </h2>
       <style>
         {`
-          @keyframes scroll {
+          @keyframes scroll-left {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
           }
@@ -48,21 +43,21 @@ export const PartnerSection = () => {
             position: "relative",
             width: "100%",
             overflow: "hidden",
+            marginBottom: "20px",
           }}
         >
           <div
             className="slide-track"
-            ref={slideTrackRef}
             style={{
               display: "flex",
               minWidth: "200%",
-              animation: "scroll 60s linear infinite",
+              animation: "scroll-left 60s linear infinite",
             }}
           >
-            {logos.map((logo, index) => (
+            {logos.concat(logos).map((logo, index) => (
               <div
                 className="slide"
-                key={index}
+                key={`top-${index}`}
                 style={{
                   height: "100px",
                   width: "250px",
@@ -74,7 +69,7 @@ export const PartnerSection = () => {
               >
                 <img
                   src={`/partners logo/${logo}`}
-                  alt={`Partner ${index}`}
+                  alt={`Top Partner ${index}`}
                   style={{
                     maxHeight: "80px",
                     maxWidth: "100%",

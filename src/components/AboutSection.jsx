@@ -40,24 +40,24 @@ export const AboutSection = () => {
             </div>
           </div>
 
-          <div ref={ref} className="grid grid-cols-3 gap-4 text-center text-sm sm:text-base">
+          <div ref={ref} className="flex flex-col sm:grid sm:grid-cols-2 md:grid-cols-3 gap-4 text-center text-sm sm:text-base sm:direction-rtl sm:text-left">
             <div className="gradient-border p-6 card-hover">
-              <h4 className="text-4xl font-bold text-primary">
+              <h4 className="text-xl sm:text-2xl md:text-3xl font-bold text-primary">
                 <CountUp start={inView ? 0 : null} end={150} duration={6} />+
               </h4>
-              <p className="text-muted-foreground mt-2">Événements couverts</p>
+              <p className="text-muted-foreground text-xs sm:text-sm mt-2">Événements couverts</p>
             </div>
             <div className="gradient-border p-6 card-hover">
-              <h4 className="text-4xl font-bold text-primary">
+              <h4 className="text-xl sm:text-2xl md:text-3xl font-bold text-primary">
                 <CountUp start={inView ? 0 : null} end={98} duration={6} />%
               </h4>
-              <p className="text-muted-foreground mt-2">Clients satisfaits</p>
+              <p className="text-muted-foreground text-xs sm:text-sm mt-2">Clients satisfaits</p>
             </div>
             <div className="gradient-border p-6 card-hover">
-              <h4 className="text-4xl font-bold text-primary">
+              <h4 className="text-xl sm:text-2xl md:text-3xl font-bold text-primary">
                 <CountUp start={inView ? 0 : null} end={24} duration={6} />h
               </h4>
-              <p className="text-muted-foreground mt-2">Temps de réponse moyen</p>
+              <p className="text-muted-foreground text-xs sm:text-sm mt-2">Temps de réponse moyen</p>
             </div>
           </div>
 
@@ -71,7 +71,7 @@ export const AboutSection = () => {
                   Location
                 </h4>
                 <p className="text-muted-foreground">
-                  Hauts-de-Seine
+                  Ile-de-France
                 </p>
               </div>
             </div>
