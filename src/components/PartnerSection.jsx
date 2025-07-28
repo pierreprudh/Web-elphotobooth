@@ -13,7 +13,6 @@ const logos = [
 export const PartnerSection = () => {
   const slideTrackRef = useRef(null);
 
-  // The slideTrackRef is kept in case you want to use it for other purposes.
 
   return (
     <>

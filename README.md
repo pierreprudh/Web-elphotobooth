@@ -13,7 +13,9 @@
 Elphotobooth is a stylish and responsive portfolio website built with **React**, **Tailwind CSS**, and **Vite**.
 It showcases a photobooth service with smooth animations, elegant visuals, and a playful interactive experience.
 
-![Preview](./public/preview.png)
+| Mobile Preview | Computer preview |
+|------------|-----------|
+| ![preview mobile](./public/preview_mobile.png) | ![preview](./public/preview.png) |
 
 ---
 
