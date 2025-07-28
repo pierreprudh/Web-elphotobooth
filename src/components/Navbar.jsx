@@ -23,7 +23,7 @@ const navItems = [
 export const Navbar = () => {
 
   const [isScrolled, setisScrolled] = useState(false);
-  const [isMenuOpen, setisMenuOpen] = useState(false);
+  const [isAccordionOpen, setIsAccordionOpen] = useState(false);
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
@@ -38,17 +38,35 @@ export const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Gestion fermeture du menu mobile lors d'un clic à l'extérieur (hors bouton menu)
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        isAccordionOpen &&
+        !event.target.closest("nav") &&
+        !event.target.closest("button[aria-label='Open Menu']")
+      ) {
+        setIsAccordionOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isAccordionOpen]);
+
 
   return <nav className={cn(
-  "fixed w-full z-40 transition-all duration-300 py-12",
+  "fixed w-full z-40 transition-all duration-300 py-6 sm:py-8",
   isScrolled ? "opacity-0 -translate-y-full pointer-events-none" : "opacity-100 translate-y-0"
 )}>
     <div className={cn(
-      "container rounded-full py-8 px-6 sm:px-8 md:px-10 lg:px-12 max-w-screen-sm sm:max-w-screen-md md:max-w-screen-lg lg:max-w-7xl",
-      "bg-white/10 backdrop-blur-2xl shadow-lg ring-1 ring-white/10 border border-white/10"
+      "container rounded-full py-4 sm:py-6 px-6 sm:px-8 md:px-10 lg:px-12 max-w-screen-sm sm:max-w-screen-md md:max-w-screen-lg lg:max-w-7xl",
+      "bg-white/50 backdrop-blur-2xl shadow-xl ring-1 ring-white/30 border border-white/30"
     )}>
-    <div className= "flex items-center justify-between">
-      <a className="text-2xl font-bold text-primary flex items-center"
+    <div className={cn(
+      "flex w-full items-center transition-all duration-500",
+      isAccordionOpen ? "justify-center" : "justify-between md:justify-between"
+    )}>
+      <a className="text-2xl font-bold text-primary flex items-center -mt-1"
          href="#hero">
         <span className="relative z-10">
           <span className="text-glow text-foreground">
@@ -70,41 +88,35 @@ export const Navbar = () => {
 
       {/*Mobile version*/}
 
-      <button onClick={() => setisMenuOpen((prev) => !prev )}
-              className="md:hidden p-2 text-foreground  z-50"
-              aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
-        > {
-        isMenuOpen ? <X size={24} /> : <Menu size={24}/> }
-      </button>
+      {!isAccordionOpen && (
+        <button
+          onClick={() => setIsAccordionOpen(true)}
+          className="md:hidden p-2 text-foreground z-50 -mt-1"
+          aria-label="Open Menu"
+        >
+          <Menu size={24} />
+        </button>
+      )}
 
-      <div className={cn(
-        "fixed inset-0 bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center h-screen",
-        "transition-all duration-500 md:hidden",
-        isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-      )}>
-        <a className="text-4xl font-bold text-primary flex items-center mb-8"
-           href="#hero">
-          <span className="relative z-10">
-            <span className="text-glow text-foreground">
-                El Photo
-            </span>{""}
-            Booth
-          </span>
+    </div>
+
+    <div
+      className={cn(
+        "md:hidden w-full overflow-hidden transition-all duration-500 ease-in-out flex flex-col items-center gap-y-4 z-0 -mt-4 px-4",
+        isAccordionOpen ? "max-h-[500px] opacity-100 py-4" : "max-h-0 opacity-0"
+      )}
+    >
+      {navItems.map((item, key) => (
+        <a
+          key={key}
+          href={item.href}
+          className="text-xl text-foreground/80 hover:text-primary transition-colors duration-300"
+          onClick={() => setIsAccordionOpen(false)}
+          size
+        >
+          {item.name}
         </a>
-        <div className="w-30 h-px bg-foreground/30 mb-8 transition-all duration-500 sm:w-48 md:w-60"></div>
-
-          <div className="flex flex-col space-y-8 text-2xl">
-            {navItems.map((item, key) => (
-              <a key = {key}
-              href={item.href}
-              className="text-foreground/80 hover:text-primary transition-colors duration-300"
-              onClick={() => setisMenuOpen(false)}
-              >
-                {item.name}
-              </a>
-            ))}
-          </div>
-      </div>
+      ))}
     </div>
     </div>
   </nav>

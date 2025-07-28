@@ -21,7 +21,7 @@ It showcases a photobooth service with smooth animations, elegant visuals, and a
 
 ## ✨ Features
 
-- 🎨 Aurora-inspired animated background
+- 🎨 Wave-inspired animated background
 - 📱 Responsive layout for all devices
 - 💡 Lucide icons + Radix UI integration
 - 🧼 Clean and modern component-based structure
